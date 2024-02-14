@@ -88,39 +88,21 @@
     </section>
 
 
-    <section class="categories">
+    {{-- <section class="categories">
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg">
-                            <h5><a href="#">Fresh Fruit</a></h5>
+                    @forEach ($top_category_list as $index => $category)
+                        <div class="col-lg-3">
+                            <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg">
+                                <h5><a href="#">{{ $top_category_list[$index]['categoryName'] }}</a></h5>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-2.jpg">
-                            <h5><a href="#">Dried Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-3.jpg">
-                            <h5><a href="#">Vegetables</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-4.jpg">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/cat-5.jpg">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     <section class="featured spad">
@@ -130,7 +112,7 @@
                     <div class="section-title">
                         <h2>Featured Product</h2>
                     </div>
-                    <div class="featured__controls">
+                    {{-- <div class="featured__controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
                             <li data-filter=".oranges">Oranges</li>
@@ -138,7 +120,7 @@
                             <li data-filter=".vegetables">Vegetables</li>
                             <li data-filter=".fastfood">Fastfood</li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="row featured__filter">
@@ -557,15 +539,15 @@
                             <a href="./index.html"><img src="images/logo.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
+                            <li>Address: No 291/5 Kuruduwaththa Rd Mampe Piliynadala</li>
+                            <li>Phone: +94 718858925</li>
                             <li>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                    data-cfemail="1e767b7272715e7d7172716c72777c307d7173">[email�&nbsp;protected]</a>
+                                    >dropshipperik@gmail.com</a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                {{-- <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
                     <div class="footer__widget">
                         <h6>Useful Links</h6>
                         <ul>
@@ -601,7 +583,7 @@
                             <a href="#"><i class="fa fa-pinterest"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="row">
                 <div class="col-lg-12">

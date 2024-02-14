@@ -1,6 +1,7 @@
 <div class="humberger__menu__wrapper">
     <div class="humberger__menu__logo">
-        <a href="#"><img src="images/logo.png" alt=""></a>
+        {{-- <a href="#"><img src="images/logo.png" alt=""></a> --}}
+        <p>Dropshipper LK</p>
     </div>
     <div class="humberger__menu__cart">
         <ul>
@@ -25,7 +26,7 @@
     </div>
     <nav class="humberger__menu__nav mobile-menu">
         <ul>
-            <li class="active"><a href="./index.html">Home</a></li>
+            <li class="active"><a href="./">Home</a></li>
             <li><a href="./shop-grid.html">Shop</a></li>
             <li><a href="#">Pages</a>
                 <ul class="header__menu__dropdown">
@@ -49,7 +50,7 @@
     <div class="humberger__menu__contact">
         <ul>
             <li><i class="fa fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                    data-cfemail="0169646d6d6e41626e6d6e736d68632f626e6c">[email�&nbsp;protected]</a></li>
+                    >dropshipperik@gmail.com</a></li>
             <li>Free Shipping for all Order of $99</li>
         </ul>
     </div>
@@ -65,7 +66,7 @@
                         <ul>
                             <li><i class="fa fa-envelope"></i> <a href="/cdn-cgi/l/email-protection"
                                     class="__cf_email__"
-                                    data-cfemail="4c24292020230c2f2320233e20252e622f2321">[email�&nbsp;protected]</a>
+                                    >dropshipperik@gmail.com</a>
                             </li>
                             <li>Free Shipping for all Order of $99</li>
                         </ul>
@@ -100,24 +101,25 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="./index.html"><img src="images/logo.png" alt=""></a>
+                    {{-- <a href="./index.html"><img src="images/logo.png" alt=""></a> --}}
+                    <h3>Dropshipper.LK</h3>
                 </div>
             </div>
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./shop-grid.html">Shop</a></li>
-                        <li><a href="#">Pages</a>
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="./shop-grid.html">About Us</a></li>
+                        {{-- <li><a href="#">Pages</a>
                             <ul class="header__menu__dropdown">
-                                <li><a href="./shop-details.html">Shop Details</a></li>
+                                <li><a href="./shop-details.html">Contact</a></li>
                                 <li><a href="./shoping-cart.html">Shoping Cart</a></li>
                                 <li><a href="./checkout.html">Check Out</a></li>
                                 <li><a href="./blog-details.html">Blog Details</a></li>
                             </ul>
-                        </li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        </li> --}}
+                        {{-- <li><a href="./blog.html">Blog</a></li> --}}
+                        {{-- <li><a href="./contact.html">Contact</a></li> --}}
                     </ul>
                 </nav>
             </div>

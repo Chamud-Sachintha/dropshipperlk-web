@@ -22,6 +22,10 @@ class Category extends Model
         return $this->where($map)->get();
     }
 
+    public function get_first_five_categorylist() {
+        return $this->limit(5)->get();
+    }
+
     public function get_all() {
         return $this->all();
     }
