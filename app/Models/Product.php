@@ -30,4 +30,8 @@ class Product extends Model
 
         return $this->where($map)->get();
     }
+
+    public function get_featured_list() {
+        return $this->limit(5)->get();
+    }
 }

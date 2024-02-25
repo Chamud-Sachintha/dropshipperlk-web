@@ -18,6 +18,11 @@ class AppHelper {
         return $file_server_url;
     }
 
+    public function getAdminUrl() {
+        $admin_url = "http://localhost:8000/";
+        return $admin_url;
+    }
+
     public function responseEntityHandle($code, $msg, $response, $token = null) {
 
         $data['code'] = $code;

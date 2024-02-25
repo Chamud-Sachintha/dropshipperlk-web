@@ -3,13 +3,13 @@
         {{-- <a href="#"><img src="images/logo.png" alt=""></a> --}}
         <p>Dropshipper LK</p>
     </div>
-    <div class="humberger__menu__cart">
+    {{-- <div class="humberger__menu__cart">
         <ul>
             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
         </ul>
         <div class="header__cart__price">item: <span>$150.00</span></div>
-    </div>
+    </div> --}}
     <div class="humberger__menu__widget">
         <div class="header__top__right__language">
             <img src="images/language.png" alt="">
@@ -123,7 +123,7 @@
                     </ul>
                 </nav>
             </div>
-            <div class="col-lg-3">
+            {{-- <div class="col-lg-3">
                 <div class="header__cart">
                     <ul>
                         <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
@@ -131,7 +131,7 @@
                     </ul>
                     <div class="header__cart__price">item: <span>$150.00</span></div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <div class="humberger__open">
             <i class="fa fa-bars"></i>
