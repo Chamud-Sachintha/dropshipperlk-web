@@ -7,8 +7,8 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
-
+    <title>Dropship.lk</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&amp;display=swap"
         rel="stylesheet">
 
@@ -52,8 +52,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-9">
-                    <div class="hero__search">
+                <div class="col-lg-11">
+                <div class="hero__search">
                         <div class="hero__search__form">
                             <form action="#">
                                 <div class="hero__search__categories">
@@ -65,6 +65,7 @@
                             </form>
                         </div>
                         <div class="hero__search__phone">
+                            
                             <div class="hero__search__phone__icon">
                                 <i class="fa fa-phone"></i>
                             </div>
@@ -72,15 +73,16 @@
                                 <h5>+94 718858925</h5>
                                 <span>support 24/7 time</span>
                             </div>
+                            
                         </div>
                     </div>
                     <div class="hero__item set-bg" data-setbg="{{ $banner }}">
-                        {{-- <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>Vegetable <br>100% Organic</h2>
-                            <p>Free Pickup and Delivery Available</p>
-                            <a href="#" class="primary-btn">SHOP NOW</a>
-                        </div> --}}
+                       {{-- <div class="hero__text">
+                            <span>BEST OFFER</span>
+                            <h2>ITEM NAME <br>Precntage%</h2>
+                            <p>Additionl</p>
+                            <a href="#" class="primary-btn">BUY NOW</a> --}}
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -88,7 +90,7 @@
     </section>
 
 
-    {{-- <section class="categories">
+     <section class="categories">
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
@@ -102,7 +104,7 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section> 
 
 
     <section class="featured spad">
@@ -112,41 +114,41 @@
                     <div class="section-title">
                         <h2>Featured Product</h2>
                     </div>
-                    {{-- <div class="featured__controls">
+                    <div class="featured__controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".oranges">Oranges</li>
-                            <li data-filter=".fresh-meat">Fresh Meat</li>
-                            <li data-filter=".vegetables">Vegetables</li>
-                            <li data-filter=".fastfood">Fastfood</li>
+                            @forEach ($data as $index => $each_category)
+                            <li><a href="/category/{{ $data[$index]['id'] }}">{{ $data[$index]['categoryName'] }}</a></li>
+                            @endforeach
                         </ul>
-                    </div> --}}
+                    </div> 
                 </div>
             </div>
             <div class="row featured__filter">
-                @forEach ($featured_list as $index => $product)
-                    <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
-                        <div class="featured__item">
-                            <div class="featured__item__pic set-bg" data-setbg="{{ $featured_list[$index]['images'] }}">
-                                <ul class="featured__item__pic__hover">
-                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="featured__item__text">
-                                <h6><a href="#">Crab Pool Security</a></h6>
-                                <h5>$30.00</h5>
-                            </div>
+            @foreach ($featured_list as $index => $product)
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="{{ $product['images'] }}">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a  onclick="addToCart('{{ $product['id'] }}', '{{ $product['productName'] }}', '{{ $product['productPrice'] }}', {{ $product['productweigth'] }} )"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                        <h6><a href="#">{{ $product['productName'] }}</a></h6>
+                            <h5>Rs.{{ $product['productPrice'] }}.00</h5>
                         </div>
                     </div>
-                @endforeach
+                </div>
+            @endforeach
+
             </div>
         </div>
     </section>
 
 
-    {{-- <div class="banner">
+   <!--  <div class="banner">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
@@ -161,10 +163,10 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div> -->
 
 
-    {{-- <section class="latest-product spad">
+    <!-- <section class="latest-product spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -172,62 +174,7 @@
                         <h4>Latest Products</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="images/lp-1.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="images/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="images/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="images/lp-1.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="images/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="images/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>$30.00</span>
-                                    </div>
-                                </a>
+                                
                             </div>
                         </div>
                     </div>
@@ -364,10 +311,10 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section> 
 
 
-    {{-- <section class="from-blog spad">
+     <section class="from-blog spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -424,8 +371,12 @@
                 </div>
             </div>
         </div>
-    </section> --}}
-
+    </section>  -->
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 
     <footer class="footer spad">
         <div class="container">
@@ -433,7 +384,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img src="images/logo.png" alt=""></a>
+                        <a href="/"><img src="images/DROPSHIPPER.png" alt=""></a>
                         </div>
                         <ul>
                             <li>Address: No 291/5 Kuruduwaththa Rd Mampe Piliynadala</li>
@@ -486,12 +437,12 @@
                 <div class="col-lg-12">
                     <div class="footer__copyright">
                         <div class="footer__copyright__text">
-                            <p>
+                        <p>
                                 Copyright ©
                                 <script data-cfasync="false" src="js/email-decode.min.js"></script>
-                                <script>document.write(new Date().getFullYear());</script>2024 All rights reserved |
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved |
                                 This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
-                                    href="https://colorlib.com" target="_blank">Colorlib</a>
+                                    href="www.builtonus.lk" target="_blank">builtonus.lk</a>
                             </p>
                         </div>
                         <div class="footer__copyright__payment"><img src="images/payment-item.png" alt=""></div>
@@ -510,6 +461,7 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     <script>
@@ -526,5 +478,196 @@
         crossorigin="anonymous"></script>
 
 </body>
+<script>
+   
+    function addToCart(id, productName, productPrice, productweigth) {
+        
+        let cart = JSON.parse(localStorage.getItem('tempCart')) || [];
+
+       
+        cart.push({
+            productId: id,
+            productName: productName,
+            productPrice: productPrice,
+            productweigth: productweigth
+        });
+
+       
+        localStorage.setItem('tempCart', JSON.stringify(cart));
+
+       
+        let cartCount = cart.length;
+        updateCartCount();
+
+       
+    }
+
+    
+    window.addEventListener('beforeunload', function () {
+       
+       localStorage.removeItem('tempCart');
+    });
+
+    
+    function getCartCount() {
+        let cart = JSON.parse(localStorage.getItem('tempCart')) || [];
+        return cart.length;
+    }
+
+    
+
+    function calculateTotalPrice() {
+    let cart = JSON.parse(localStorage.getItem('tempCart')) || [];
+    let totalPrice = 0;
+    let totalWeigth = 0;
+    
+    for (let item of cart) {
+        totalPrice += parseFloat(item.productPrice);
+        totalWeigth += parseFloat(item.productweigth);
+        console.log('Updating totalWeigth: ' + totalWeigth);
+    }
+
+    return { totalPrice: totalPrice, totalWeight: totalWeigth };
+}
+    
+    let totalCount = getCartCount();
+    console.log('Total items in cart: ' + totalCount);
+
+    function updateCartCount() {
+        let cartCountElement = document.getElementById('cartCount');
+        let totalPriceElement = document.getElementById('totalPrice');
+        let carttotalPrice = document.getElementById('carttotalPrice');
+        let carttotalweigth = document.getElementById('carttotalweigth');
+
+
+    if (cartCountElement) {
+        let totalCount = getCartCount();
+        let totalProductPrice = calculateTotalPrice();
+        console.log('Updating cart count. New count: ' + totalCount); 
+        cartCountElement.textContent = totalCount;
+        totalPriceElement.textContent = 'Rs.' + totalProductPrice.totalPrice.toFixed(2); 
+        carttotalPrice.value = totalProductPrice.totalPrice.toFixed(2);
+        carttotalweigth.value = totalProductPrice.totalWeight.toFixed(2);
+
+    }
+
+   
+
+    
+}
+
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let viewCartLink = document.getElementById('viewCartLink');
+        if (viewCartLink) {
+            viewCartLink.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                let cart = JSON.parse(localStorage.getItem('tempCart')) || [];
+                document.getElementById('cartDataInput').value = JSON.stringify(cart);
+
+               // document.getElementById('cartForm').submit();
+            });
+        }
+    });
+</script>
+<script>
+    document.getElementById('viewCartLink').addEventListener('click', function() {
+    document.getElementById('modal').style.display = 'block';
+});
+
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('modal').style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target == document.getElementById('modal')) {
+        document.getElementById('modal').style.display = 'none';
+    }
+});
+
+</script>
+<script>
+    $(document).ready(function () {
+        // Initially, show only the login form
+        $('#loginForm').show();
+        $('#signupForm').hide();
+
+        // Toggle between login and signup forms on link click
+        $('#toggleForms a').on('click', function (e) {
+            e.preventDefault();
+            console.log("jnj");
+            // Toggle visibility of forms
+            $('#loginForm, #signupForm').toggle();
+        });
+    });
+</script>
+
+<script>
+   $(document).ready(function() {
+    $('#signupButton').on('click', function() {
+        var formData = {
+            Cname: $('#Cname').val(),
+            Cemail: $('#Cemail').val(),
+            Cpassword: $('#Cpassword').val()
+        };
+        
+        $.ajax({
+            type: 'POST',
+            url: '{{ route('RejisterCustomer') }}',
+            data: formData,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(response) {
+                var registrationId = response.registrationId;
+                console.log('Registration ID:', registrationId);
+                $('#customerId').val(registrationId);
+                $('#cartForm').submit();
+            },
+            error: function(error) {
+                // Handle the error
+                console.error('AJAX Error:', error);
+            }
+        });
+    });
+});
+
+
+function validateForm() {
+    var email = $('#email').val();
+    var password = $('#password').val();
+
+    if (email.trim() === '' || password.trim() === '') {
+        alert('Please enter both email and password.');
+        return;
+    }
+
+    $.ajax({
+        url: '/Authlogin',
+        type: 'POST',
+        data: {
+            email: email,
+            password: password,
+            _token: $('input[name="_token"]').val()
+        },
+        success: function(response) {
+            console.log('sad',response);
+            if(response == 12){
+                $('#customerId').val(response);
+                $('#cartForm').submit();
+            }
+            else{
+                alert('Validation failed. Please check your credentials.');
+            }
+        },
+        error: function(error) {
+            console.error('Error occurred:', error);
+        }
+    });
+}
+</script>
 
 </html>

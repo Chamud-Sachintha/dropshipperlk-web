@@ -281,7 +281,7 @@
 				<div class="col-lg-3 col-md-6 col-sm-6">
 					<div class="footer__about">
 						<div class="footer__about__logo">
-							<a href="./index.html"><img src="images/logo.png" alt=""></a>
+						<a href="/"><img src="images/DROPSHIPPER.png" alt=""></a>
 						</div>
 						<ul>
 							<li>Address: 60-49 Road 11378 New York</li>
@@ -334,14 +334,13 @@
 				<div class="col-lg-12">
 					<div class="footer__copyright">
 						<div class="footer__copyright__text">
-							<p>
-								Copyright ©
-								<script data-cfasync="false" src="js/email-decode.min.js"></script>
-								<script>document.write(new Date().getFullYear());</script>2024 All rights reserved |
-								This template is
-								made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
-									href="https://colorlib.com" target="_blank">Colorlib</a>
-							</p>
+						<p>
+                                Copyright ©
+                                <script data-cfasync="false" src="js/email-decode.min.js"></script>
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved |
+                                This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
+                                    href="www.builtonus.lk" target="_blank">builtonus.lk</a>
+                            </p>
 						</div>
 						<div class="footer__copyright__payment"><img src="images/payment-item.png" alt=""></div>
 					</div>

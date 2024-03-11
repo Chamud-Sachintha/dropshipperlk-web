@@ -32,6 +32,10 @@ class Product extends Model
     }
 
     public function get_featured_list() {
-        return $this->limit(5)->get();
+        return $this->limit(8)->get();
+    }
+
+    public function get_product_all(){
+        return $this->get();
     }
 }
